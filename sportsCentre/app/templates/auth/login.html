@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href={{url_for('static', filename='css/login.css')}} />
+    <h1 class="h1title">Olympus Sport Centre</h1>
+    <h2>User Login</h2> 
+    <div class="login">
+        <p> {{error}} </p>
+        <form action="/login" method="POST" class="form-signin">
+            <label for="inputEmail" class="sr-only">Email:</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required
+                   autofocus>
+            <br />
+            <label for="inputPassword" class="sr-only">Password:</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password"
+                   required>
+            <br />
+            <button href="/" class="btn btn-lg btn-primary btn-block" role="button" aria-pressed="true">Sign in</button>
+       
+        </form>
+    </div>
+
+    <div class="noaccount">
+        <p c>Sign in as a manager</p>
+        <a href="/mloginForm" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Go to Manager login</a>
+    </div> 
+
+    <div class="noaccount">
+        <p c>Sing in as an employee</p>
+        <a href="/eloginForm" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Go to Employee login</a>
+    </div>
+
+        <div class="noaccount">
+            <p c>Do not have an account?</p>
+            <a href="/signupForm" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Register here</a>
+        </div> 
+    
+    
+    <div class="back">
+        <a href="/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Go to home</a>
+    </div>
+
+{% endblock content %}

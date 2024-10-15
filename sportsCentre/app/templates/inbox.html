@@ -1,0 +1,32 @@
+{% extends 'ebase.html' %}
+
+{% block content %}
+
+<html>
+<head>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/inbox.css') }} />
+    <title></title>
+</head>
+<body>
+    <h1 style="text-align: center;">Inbox</h1>
+    <p>&nbsp;</p>
+    <h3 style="text-align: center;">You can send reservation date confirmations and otehr announcements to customers through this page.</h3>
+<table>
+  <tr>
+    <th>Sender</th>
+    <th>Message</th>
+    <th>Timestamp</th>
+  </tr>
+  {% for message in messages %}
+    <tr>
+      <td>{{ message.sender.username }}</td>
+      <td>{{ message.content }}</td>
+      <td>{{ message.timestamp }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
+
+{% endblock %}

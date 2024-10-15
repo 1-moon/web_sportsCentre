@@ -1,0 +1,52 @@
+
+
+{% extends "manager/mbase.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href={{ url_for('static', filename='css/base.css') }} />
+
+
+<div>
+	{% for data in eusers %}
+	<table id="data" class="table table-striped">
+		<thead>  
+		<tr>
+			<th>UserId</th>
+			<th>Email</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+		</tr>
+		</thead>
+
+		<tbody>
+			{% for row in data %}
+		<tr>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[0]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[2]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[3]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[4]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px;">
+				<form action="{{ url_for('auth.Delete', userId=row[0]) }}" method="post">
+					<input type="submit" class="btn btn-outline-light btn-dark" value="Delete">
+				  </form>
+			</td>
+		</tr>
+			{% endfor %}	
+	</tbody>
+	</table>
+	
+	{% endfor %}
+</div>
+
+
+{% endblock %}
+      

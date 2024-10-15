@@ -1,0 +1,65 @@
+
+
+{% extends "manager/mbase.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href={{ url_for('static', filename='css/table.css') }} />
+
+  <div>
+	{% for data in facility %}
+	<table  border="1" class="center">
+		<thead class="thead">  
+		<tr>
+			<th>Facility</th>
+			<th>Available Areas</th>
+			<th>Description</th>
+			<th>Capacity</th>
+			<th>Openning Time</th>
+			<th>Closing Time</th>
+		</tr>
+		</thead>
+
+		<tbody>
+			{% for row in data %}
+			
+		<tr>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[1]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[2]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[3]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[4]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[5]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[6]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px;">
+				<form action="{{ url_for('main.Deletef', facilityId=row[0]) }}" method="post">
+					<input type="submit" class="btn btn-outline-light btn-dark" value="Delete">
+				  </form>
+			</td>
+		</tr>
+			{% endfor %}	
+	</tbody>
+	</table>
+	
+	{% endfor %}
+	<center>
+	<p><span style="font-size:18px">*(1) Only one person has to book the court (Maximum 4 people per court)</p>
+	</center>
+</div>
+
+
+
+
+{% endblock %}
+      

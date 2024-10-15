@@ -1,0 +1,158 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href={{ url_for('static', filename='css/table.css') }} />
+
+
+<!-- id="data" class="table table-striped"
+style="margin-top:0px; margin-left:100px;" -->
+<!-- table for facilities -->
+  <div>
+	{% for data in facility %}
+	<table  border="1" class="center">
+		<thead class="thead">  
+		<tr>
+			<th>Facility</th>
+			<th>Available Areas</th>
+			<th>Description</th>
+			<th>Capacity</th>
+			<th>Openning Time</th>
+			<th>Closing Time</th>
+		</tr>
+		</thead>
+
+		<tbody>
+			{% for row in data %}
+			
+		<tr>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[1]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[2]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[3]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[4]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[5]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[6]}}
+			</td>
+		</tr>
+			{% endfor %}	
+	</tbody>
+	</table>
+	
+	{% endfor %}
+	<center>
+	<p><span style="font-size:18px">*(1) Only one person has to book the court (Maximum 4 people per court)</p>
+	</center>
+</div>
+<!-- tabele for activities -->
+<div>	
+	<table border="1" class="center">
+		<thead>  
+		<tr>
+			<th>Facility</th>
+			<th>Activity</th>
+			<th>Price</th>
+		
+		</tr>
+		</thead>
+
+	<tbody>		
+			{% for data in result %}	
+			{% for row in data %}
+			
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[0]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[1]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[2]}}
+			</td>
+		</tr>
+		{% endfor %}
+		{% endfor %}
+		
+	
+	</tbody>
+	</table>
+</div>
+<!-- tabele for team events, classes -->
+<div>
+	<br>
+
+	<!-- <table id="data" class="table table-striped"> -->
+	<table border="1" class="center">
+		<thead>  
+		<tr>
+			<th>Facility</th>
+			<th>Class</th>
+			<th>Day</th>
+			<th>Start</th>
+			<th>End</th>
+			
+		</tr>
+		</thead>
+
+		<tbody>
+			{% for data in result1 %}
+			{% for row in data %}
+			<tr>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[0]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[1]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[2]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[3]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{row[4]}}
+			</td>
+		</tr>
+			{% endfor %}		
+			{% endfor %}
+	</tbody>
+	</table>
+	
+</div>
+
+
+<div>
+	<center>
+		<p><span style="font-size:25px"><Strong>Start now by getting a membership!</Strong></p>
+			<a href="/membership" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Membership</a>
+		
+			<br>
+		<p><span style="font-size:25px"><Strong>Or book a session today!</Strong></p>
+			<a href="/booking" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Book a class</a>
+		
+			<br>
+		<p><span style="font-size:25px"><Strong>Join our teams!</Strong></p>
+			<a href="/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Join a team</a>
+	
+	</center>
+
+
+
+</div>
+
+
+{% endblock %}
+      

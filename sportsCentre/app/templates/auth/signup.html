@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href={{url_for('static', filename='css/register.css')}} />
+    <html>
+    <head>
+    <title>Log in</title>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}">
+    
+    </script>
+    </head>
+    <body>
+
+    <h1 class="h1title">Olympus Sport Centre</h1>
+    <div class="login">
+      <form action="/signup" method="POST" onsubmit="return validate()">
+        <form action="/register_data" method = "POST" class="form-register">
+          <p>Email: <input type="email" name="email"></p>
+
+          <P>Password: <input type="password" name="password" id="password" required></p>
+      
+          <p>Confirm Password: <input type="password" name="cpassword" id="cpassword"></p>
+      
+          <p>First Name: <input type="text" name="firstName"></p>
+          <p>Last Name: <input type="text" name="lastName"></p>
+          <p>Address Line 1: <input type="text" name="address1"></p>
+          <p>Address Line 2: <input type="text" name="address2"></p>
+          <p>Zipcode: <input type="text" name="zipcode"></p>
+          <p>City: <input type="text" name="city"></p>
+          <p>State: <input type="text" name="state"></p>
+          <p>Country: <input type="text" name="country"></p>
+          <p>Phone Number: <input type="text" name="phone"></p>
+      
+          <button href="/signupForm" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Register</button>
+          <br />
+          <a href="/loginForm" class="btn btn-secondary btn-lg" >Login here</a>
+      </form>
+      </form>
+      
+    </div>
+    {% if error %}
+      <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <div class="back">
+        <a href="/" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Go to home</a>
+    </div>
+   </body>
+</html>
+

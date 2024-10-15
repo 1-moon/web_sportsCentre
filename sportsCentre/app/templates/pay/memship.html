@@ -1,0 +1,93 @@
+<!-- 
+    membership page  first released by moon   
+-->
+{% extends "base.html" %}
+
+{% block header %}
+
+<div class="jumbotron text-center">
+  <h1>Membership Plan</h1> 
+  <p>Why don't you be our member? </p> 
+</div>
+{% endblock header %}
+
+{% block content %}
+<!-- ================================   Monthly membership =================== -->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="p-3 mb-2 bg-black text-white" >Monthly</h3>
+        <p class="card-text">Any time access all the facilities for free</p>
+        <p class="card-text">Get exclusive discounts on booking activties</p>
+        <p class="card-text">No joining fee</p>
+        <p class="card-text">No contract! You can leave anytime</p>
+        <p class="card-text"><b>Membership fee:</b> &#163;35 Monthly</p>
+        <br>
+        <a>
+          {% if loggedIn %}
+          <form id="membership_form" action="{{ url_for('main.membership')}}" method="post">
+            <input type="hidden" name="status" value="1">
+            <input type="hidden" name="membership_type" value="Monthly">
+            <button type="submit" class="p-3 mb-2 bg-black text-white">Go to Payment</button>
+          </form>
+          {% else %}
+          <form action="{{ url_for('main.membership')}}" method="post">
+            <a class="p-3 mb-2 bg-black text-white" href="{{ url_for('auth.loginForm') }}" >Go to Payment</a>
+          </form>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+<!-- ================================   Annual membership =================== -->
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="p-3 mb-2 bg-black text-white">Annually</h3>
+        <p class="card-text">Any time access all the facilities for free</p>
+        <p class="card-text">Get exclusive discounts on booking activties</p>
+        <p class="card-text">No joining fee</p>
+        <p class="card-text">Access Netflix and BBC iPlayer from Technogym equipment on annual membership</p>
+        <p class="card-text"><b>Membership fee:</b> &#163;300 Annually</p>
+        <br>
+        <a>
+          {% if loggedIn %}
+          <form id="membership_form" action="{{ url_for('main.membership')}}" method="post">
+            <input type="hidden" name="status" value="1">
+            <input type="hidden" name="membership_type" value="Annual">
+            <button type="submit"class="p-3 mb-2 bg-black text-white" href="{{ url_for('main.payment') }}" name="status">Go to Payment</button>
+          </form>
+          {% else %}
+          <form action="{{ url_for('main.membership')}}" method="post">
+            <a class="p-3 mb-2 bg-black text-white" href="{{ url_for('auth.loginForm') }}" >Go to Payment</a>
+          </form> 
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#monthly_button').click(function() {
+      $('#membership_form').append('<input type="hidden" name="status" value="True">');
+      $('#membership_form').append('<input type="hidden" name="membership_type" value="Monthly">');
+      $('#membership_form').submit();
+    });
+
+    $('#annual_button').click(function() {
+      $('#membership_form').append('<input type="hidden" name="status" value="True">');
+      $('#membership_form').append('<input type="hidden" name="membership_type" value="Annual">');
+      $('#membership_form').submit();
+    });
+  });
+</script>
+
+
+{% endblock content %}
+
+  

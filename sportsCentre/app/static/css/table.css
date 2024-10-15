@@ -1,0 +1,104 @@
+table{
+	border-collapse: collapse;
+	margin:0;
+	padding: .45em;
+    box-sizing: border-box;
+    letter-spacing: 0.5px;
+	box-shadow: 0 0 5px rgb(167, 207, 232);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.invoice-table{
+    border-collapse: collapse;
+}
+table tr{
+    padding: .45em;
+}
+
+tbody tr:nth-child(even){
+    background-color: #b6ddff;
+}
+
+/* typography */
+
+html {
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+  }
+  
+  th {
+    letter-spacing: 2px;
+  }
+  
+  td {
+    letter-spacing: 1px;
+  }
+  
+  tbody td {
+    text-align: center;
+  }
+  thead th {
+    text-align: center;
+  }
+  
+  tfoot th {
+    text-align: right;
+  }
+
+  /* graphics and colors */
+
+thead,
+tfoot {
+    background: url(swimming.png);
+  color: #ffffff;
+
+  text-shadow: 1px 1px 1px #000000;
+}
+
+thead th,
+tfoot th,
+tfoot td {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+  border: 3px solid rgb(167, 207, 232);
+}
+
+
+/* zebra striping */
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(201, 215, 235);
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: hsl(234, 59%, 87%);
+  }
+  
+  /* tbody tr {
+    background-image: url(swimming.png);
+  } */
+
+  /* astaaa eeee */
+  table {
+    background-color: #ae8fe2;
+  }
+
+
+  /* caption */
+
+caption {
+    padding: 20px;
+    caption-side: bottom;
+    color: #b9e6f5;
+    text-align: right;
+    letter-spacing: 1px;
+  }
+
+  /* Inspiration from: https://www.youtube.com/watch?v=IGBRYTpgyg4&t=833s
+  https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */

@@ -1,0 +1,329 @@
+{% extends "mbase.html" %}
+
+{% block content %}
+
+<head>
+    <title>Facility Usage</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<center>
+<body>
+    <h3>Facilities Used:</h>
+    <div id="chart"></div>
+    <script>
+        var data = {{ results|tojson }};
+        
+        var svg = d3.select('#chart')
+                    .append('svg')
+                    .attr('width', 700)
+                    .attr('height', 500);
+
+        var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+        var width = +svg.attr('width') - margin.left - margin.right;
+        var height = +svg.attr('height') - margin.top - margin.bottom;
+        var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+        var y = d3.scaleLinear().rangeRound([height, 0]);
+
+        var g = svg.append('g')
+                   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+        x.domain(data.map(function(d) { return d[0]; }));
+        y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+
+        g.append('g')
+         .attr('class', 'axis axis-x')
+         .attr('transform', 'translate(0,' + height + ')')
+         .call(d3.axisBottom(x));
+
+        g.append('g')
+         .attr('class', 'axis axis-y')
+         .call(d3.axisLeft(y).ticks(10, 's'))
+         .append('text')
+         .attr('transform', 'rotate(-90)')
+         .attr('y', 6)
+         .attr('dy', '0.71em')
+         .attr('text-anchor', 'end')
+         .text('Count');
+
+        g.selectAll('.bar')
+         .data(data)
+         .enter()
+         .append('rect')
+         .attr('class', 'bar')
+         .attr('x', function(d) { return x(d[0]); })
+         .attr('y', function(d) { return y(d[1]); })
+         .attr('width', x.bandwidth())
+         .attr('height', function(d) { return height - y(d[1]); });
+    </script>
+
+    <h3>Activities Used:</h>
+    <div id="chart1"></div>
+    <script>
+        var data = {{ results1|tojson }};
+        
+        var svg = d3.select('#chart1')
+                    .append('svg')
+                    .attr('width', 700)
+                    .attr('height', 500);
+
+        var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+        var width = +svg.attr('width') - margin.left - margin.right;
+        var height = +svg.attr('height') - margin.top - margin.bottom;
+        var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+        var y = d3.scaleLinear().rangeRound([height, 0]);
+
+        var g = svg.append('g')
+                   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+        x.domain(data.map(function(d) { return d[0]; }));
+        y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+
+        g.append('g')
+         .attr('class', 'axis axis-x')
+         .attr('transform', 'translate(0,' + height + ')')
+         .call(d3.axisBottom(x));
+
+        g.append('g')
+         .attr('class', 'axis axis-y')
+         .call(d3.axisLeft(y).ticks(10, 's'))
+         .append('text')
+         .attr('transform', 'rotate(-90)')
+         .attr('y', 6)
+         .attr('dy', '0.71em')
+         .attr('text-anchor', 'end')
+         .text('Count');
+
+        g.selectAll('.bar')
+         .data(data)
+         .enter()
+         .append('rect')
+         .attr('class', 'bar')
+         .attr('x', function(d) { return x(d[0]); })
+         .attr('y', function(d) { return y(d[1]); })
+         .attr('width', x.bandwidth())
+         .attr('height', function(d) { return height - y(d[1]); });
+    </script>
+
+
+<h3>Events Used:</h>
+    <div id="chart2"></div>
+    <script>
+        var data = {{ results2|tojson }};
+        
+        var svg = d3.select('#chart1')
+                    .append('svg')
+                    .attr('width', 700)
+                    .attr('height', 500);
+
+        var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+        var width = +svg.attr('width') - margin.left - margin.right;
+        var height = +svg.attr('height') - margin.top - margin.bottom;
+        var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+        var y = d3.scaleLinear().rangeRound([height, 0]);
+
+        var g = svg.append('g')
+                   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+        x.domain(data.map(function(d) { return d[0]; }));
+        y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+
+        g.append('g')
+         .attr('class', 'axis axis-x')
+         .attr('transform', 'translate(0,' + height + ')')
+         .call(d3.axisBottom(x));
+
+        g.append('g')
+         .attr('class', 'axis axis-y')
+         .call(d3.axisLeft(y).ticks(10, 's'))
+         .append('text')
+         .attr('transform', 'rotate(-90)')
+         .attr('y', 6)
+         .attr('dy', '0.71em')
+         .attr('text-anchor', 'end')
+         .text('Count');
+
+        g.selectAll('.bar')
+         .data(data)
+         .enter()
+         .append('rect')
+         .attr('class', 'bar')
+         .attr('x', function(d) { return x(d[0]); })
+         .attr('y', function(d) { return y(d[1]); })
+         .attr('width', x.bandwidth())
+         .attr('height', function(d) { return height - y(d[1]); });
+    </script>
+
+
+
+<h3>Memberships Bought:</h>
+    <div id="chart3"></div>
+    <script>
+        var data = {{ results3|tojson }};
+        
+        var svg = d3.select('#chart1')
+                    .append('svg')
+                    .attr('width', 700)
+                    .attr('height', 500);
+
+        var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+        var width = +svg.attr('width') - margin.left - margin.right;
+        var height = +svg.attr('height') - margin.top - margin.bottom;
+        var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+        var y = d3.scaleLinear().rangeRound([height, 0]);
+
+        var g = svg.append('g')
+                   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+        x.domain(data.map(function(d) { return d[0]; }));
+        y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+
+        g.append('g')
+         .attr('class', 'axis axis-x')
+         .attr('transform', 'translate(0,' + height + ')')
+         .call(d3.axisBottom(x));
+
+        g.append('g')
+         .attr('class', 'axis axis-y')
+         .call(d3.axisLeft(y).ticks(10, 's'))
+         .append('text')
+         .attr('transform', 'rotate(-90)')
+         .attr('y', 6)
+         .attr('dy', '0.71em')
+         .attr('text-anchor', 'end')
+         .text('Count');
+
+        g.selectAll('.bar')
+         .data(data)
+         .enter()
+         .append('rect')
+         .attr('class', 'bar')
+         .attr('x', function(d) { return x(d[0]); })
+         .attr('y', function(d) { return y(d[1]); })
+         .attr('width', x.bandwidth())
+         .attr('height', function(d) { return height - y(d[1]); });
+    </script>
+
+
+
+
+</body>
+</center>
+
+<footer style="background-color: rgb(54, 54, 54); color:#fff">
+    <hr>
+    <span style="border: 2px solid rgb(255, 255, 255); padding: 0 40px">Contact Info</span><br>
+    <span><strong><i>Email:</span><br></i></strong>
+    <span><a style="text-decoration: none; color:#fff" href="mailto:sc21ar@leeds.ac.uk">sc21ar@leeds.ac.uk</a></span><br>
+    <span><a style="text-decoration: none; color:#fff" href="mailto:sc21h2h@leeds.ac.uk">sc21h2h@leeds.ac.uk</a></span><br>
+    <span><a style="text-decoration: none; color:#fff" href="mailto:ml20g2l@leeds.ac.uk">ml20g2l@leeds.ac.uk</a></span><br>
+    <span><a style="text-decoration: none; color:#fff" href="mailto:sc21nl@leeds.ac.uk">sc21nl@leeds.ac.uk</a></span><br>
+    <span><a style="text-decoration: none; color:#fff" href="mailto:sc21samg@leeds.ac.uk">sc21samg@leeds.ac.uk</a></span><br><br>
+    <span><b>
+      General Availability:
+      Monday to Friday 9am – 5pm
+      </b>
+    </span>
+  
+    <hr>
+    <div class="container12">
+      <div class="right_social_media">
+          <h5>Follow our social media:</h5>
+          <h6><ul style="list-style: none;">
+            <li><i><strong>Instagram: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.instagram.com/olympussportcentre/">Instagram Handle</a></li>
+            <li><i><strong>Facebook: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.facebook.com/people/Olympus-Sport-Centre/100090985419485/">Facebook Handle</a></li>
+            <li><i><strong>Twitter: </strong></i><a style="text-decoration: none; color:#fff" href="https://twitter.com/OlympusSportLds">Twitter Handle</a></li>
+            <li><i><strong>Youtube: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.youtube.com/channel/UC89p2J9l_d0eQYuKNhS23tA">Youtube Handle</a></li>
+          </ul></h6>
+          <ul style="list-style: none;">
+            <style>
+              /* Popup container - can be anything you want */
+              .popup {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+              }
+              
+              /* The actual popup */
+              .popup .popuptext {
+                visibility: hidden;
+                width: 160px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -80px;
+              }
+              
+              /* Popup arrow */
+              .popup .popuptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: rgb(255, 255, 255) transparent transparent transparent;
+              }
+              
+              /* Toggle this class - hide and show the popup */
+              .popup .show {
+                visibility: visible;
+                -webkit-animation: fadeIn 1s;
+                animation: fadeIn 1s;
+              }
+              
+              /* Add animation (fade in the popup) */
+              @-webkit-keyframes fadeIn {
+                from {opacity: 0;} 
+                to {opacity: 1;}
+              }
+              
+              @keyframes fadeIn {
+                from {opacity: 0;}
+                to {opacity:1 ;}
+              }
+              </style>                        
+              <div class="popup" onclick="myFunction()">Opening Hours>
+                <span class="popuptext" id="myPopup">
+                  Open: --:-- <br>
+                  Closes: --:--
+                </span>
+              </div>
+              
+              <script>
+              // When the user clicks on div, open the popup
+              function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+              }
+              </script>
+              
+  
+  
+            <li><a style="background-color: rgb(255, 255, 255); padding: 0; margin: 5px 0"href="/maboutUs" class="btn">About us></a></li>
+          </ul>
+      </div>
+    </div>
+     <form action="/msetcookie" method="POST">
+      {% if loggedIn %}
+      <h1 style="padding: 0px; padding-left: 350px">Set cookie</h1>
+           <p style="margin-left: 625px; margin-bottom: 7px"><input style="border-radius: 8px; background-color: rgb(255, 255, 255); color:black" type='submit' value='Set Cookie'/></p>
+       <a style="text-decoration: none; color:black; margin-top: 0px;  margin-left: 613px; background-color: rgb(255, 255, 255); border-radius: 8px; padding-left: 5px; padding-right: 5px" href="/mgetcookie">see cookie value</a>
+      {% endif %}
+    </form>
+    <span style="text-align: right;">
+    <a style="text-decoration: none; display: block; margin-top: -23px; color:#fff" href="/mprivacy">Privacy Policy</a>
+    </span>
+  </footer>
+
+{% endblock %}

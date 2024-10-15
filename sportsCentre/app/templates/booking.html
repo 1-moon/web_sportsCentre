@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/booking.css') }} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="../static/js/booking.js" defer></script>
+  </head>
+  <center>
+    <body>
+      {% if not loggedIn %}
+      <a href="/loginForm" class="btn">Login to book></a>
+      {% else %}
+      <div class="card">
+        <br>
+        <form method="POST">
+          <label for="facility"><font size="+2"><b>Facility:</label></font></b>
+          <br>
+          <select name="facility" id="facility">
+              {% for facility in facilities %}
+              <option value="{{ facility[0] }}">{{ facility[1] }}</option>
+              {% endfor %}
+          </select>
+          <br>
+          <br>
+          <div class="card" style="width: 30rem;">
+            <img id="facility-image" src={{ url_for('static', filename='images/swim.png') }} />
+          </div>
+          <br>
+          {% if activities %}
+          <label for="activity"><font size="+2"><b>Activity:</label></font></b>
+          <br>
+          {% if activities|length == 1 %}
+              <p>{{ activities[0][1] }}</p>
+          {% else %}
+              <select name="activity" id="activity">
+                  {% for activity in activities %}
+                      <option value="{{ activity[0] }}">{{ activity[1] }}</option>
+                  {% endfor %}
+              </select>
+              <br>
+              <br>
+          {% endif %}
+      {% endif %}
+
+            {% if events %}
+            <label for="event"><font size="+2"><b>Day:</label></font></b>
+            <br>
+            {% if events|length == 1 %}
+                <p>{{ events[0][2] }} {{events[0][3] }}</p>
+            {% else %}
+                <select name="event" id="event">
+                  {% for event in events %}
+                  <option value="{{ event[0] }}">{{ event[2] }} {{ event[3] }}</option>
+                  {% endfor %}
+              </select>
+              <br>
+              <br>
+            {% endif %}
+          {% endif %}
+          <button type="submit" onclick="submitBooking()">Submit</button>
+        </form>
+        <br>
+      </div>
+      {% endif %}
+    </body>
+  </center>
+
+  <script>
+    const facilityDropdown = document.querySelector("#facility");
+    const facilityImage = document.querySelector("#facility-image");
+
+    // Check if selectedFacility value exists in local storage
+    const selectedFacility = localStorage.getItem("selectedFacility");
+    if (selectedFacility) {
+        // Set facility dropdown value and update image source
+        facilityDropdown.value = selectedFacility;
+        facilityImage.src = "{{ url_for('static', filename='images/') }}" + selectedFacility + ".png";
+    }
+
+    // Add event listener to facility dropdown
+    facilityDropdown.addEventListener("change", () => {
+        // Get selected facility ID
+        const facilityId = facilityDropdown.value;
+
+        // Update image source based on facility ID
+        switch (facilityId) {
+            case "1":
+                facilityImage.src = "{{ url_for('static', filename='images/swim.png') }}";
+                break;
+            case "2":
+                facilityImage.src = "{{ url_for('static', filename='images/yoga-aboutus.png') }}";
+                      break;
+                  case "3":
+                      facilityImage.src = "{{ url_for('static', filename='images/squash1.png') }}";
+                      break;
+                  case "4":
+                      facilityImage.src = "{{ url_for('static', filename='images/tennis.png') }}";
+                      break;
+                  case "5":
+                      facilityImage.src = "{{ url_for('static', filename='images/climbing1.png') }}";
+                      break;
+                  case "6":
+                      facilityImage.src = "{{ url_for('static', filename='images/hiring.png') }}";
+                      break;
+                  default:
+                      facilityImage.src = "{{ url_for('static', filename='images/swim.png') }}";
+              }
+  
+              // Store selected facility ID in local storage
+              localStorage.setItem("selectedFacility", facilityDropdown.value);
+
+              console.log(facilityImage.src);
+
+          });
+      </script>
+
+
+<script>
+  const activityDropdown = document.querySelector("#activity");
+
+  // Check if selectedActivity value exists in local storage
+  const selectedActivity = localStorage.getItem("selectedActivity");
+  if (selectedActivity) {
+      // Set activity dropdown value and update image source
+      activityDropdown.value = selectedActivity;
+  }
+
+  // Add event listener to activity dropdown
+  activityDropdown.addEventListener("change", () => {
+      // Get selected activity ID
+      const activityId = activityDropdown.value;
+
+      
+            // Store selected activity ID in local storage
+            localStorage.setItem("selectedActivity", activityDropdown.value);
+
+            // console.log(facilityImage.src);
+
+        });
+    </script>
+
+
+<footer style="background-color: rgb(54, 54, 54); color:#fff">
+  <hr>
+  <span style="border: 2px solid rgb(255, 255, 255); padding: 0 40px">Contact Info</span><br>
+  <span><strong><i>Email:</span><br></i></strong>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21ar@leeds.ac.uk">sc21ar@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21h2h@leeds.ac.uk">sc21h2h@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:ml20g2l@leeds.ac.uk">ml20g2l@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21nl@leeds.ac.uk">sc21nl@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21samg@leeds.ac.uk">sc21samg@leeds.ac.uk</a></span><br><br>
+  <span><b>
+    General Availability:
+    Monday to Friday 9am – 5pm
+    </b>
+  </span>
+
+  <hr>
+  <div class="container12">
+    <div class="right_social_media">
+        <h5>Follow our social media:</h5>
+        <h6><ul style="list-style: none;">
+          <li><i><strong>Instagram: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.instagram.com/olympussportcentre/">Instagram Handle</a></li>
+          <li><i><strong>Facebook: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.facebook.com/people/Olympus-Sport-Centre/100090985419485/">Facebook Handle</a></li>
+          <li><i><strong>Twitter: </strong></i><a style="text-decoration: none; color:#fff" href="https://twitter.com/OlympusSportLds">Twitter Handle</a></li>
+          <li><i><strong>Youtube: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.youtube.com/channel/UC89p2J9l_d0eQYuKNhS23tA">Youtube Handle</a></li>
+        </ul></h6>
+        <ul style="list-style: none;">
+          <style>
+            /* Popup container - can be anything you want */
+            .popup {
+              position: relative;
+              display: inline-block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+            
+            /* The actual popup */
+            .popup .popuptext {
+              visibility: hidden;
+              width: 160px;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -80px;
+            }
+            
+            /* Popup arrow */
+            .popup .popuptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: rgb(255, 255, 255) transparent transparent transparent;
+            }
+            
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+              visibility: visible;
+              -webkit-animation: fadeIn 1s;
+              animation: fadeIn 1s;
+            }
+            
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+              from {opacity: 0;} 
+              to {opacity: 1;}
+            }
+            
+            @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+            }
+            </style>                        
+            <div class="popup" onclick="myFunction()">Opening Hours>
+              <span class="popuptext" id="myPopup">
+                Open: --:-- <br>
+                Closes: --:--
+              </span>
+            </div>
+            
+            <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+            }
+            </script>
+            
+
+
+          <li><a style="background-color: rgb(255, 255, 255); padding: 0; margin: 5px 0"href="/aboutUs" class="btn">About us></a></li>
+        </ul>
+    </div>
+  </div>
+  <form action="/setcookie" method="POST">
+    {% if loggedIn %}
+    <h1 style="padding: 0px; padding-left: 350px">Set cookie</h1>
+         <p style="margin-left: 625px; margin-bottom: 7px"><input style="border-radius: 8px; background-color: rgb(255, 255, 255); color:black" type='submit' value='Set Cookie'/></p>
+     <a style="text-decoration: none; color:black; margin-top: 0px;  margin-left: 613px; background-color: rgb(255, 255, 255); border-radius: 8px; padding-left: 5px; padding-right: 5px" href="/getcookie">see cookie value</a>
+    {% endif %}
+  </form>
+  <span style="text-align: right;">
+  <a style="text-decoration: none; display: block; margin-top: -23px; color:#fff" href="/privacy">Privacy Policy</a>
+  </span>
+</footer>
+
+  {% endblock %}  

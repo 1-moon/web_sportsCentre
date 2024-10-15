@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+  <head>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/aboutUs.css') }} />
+  </head>
+  <body>
+    <div class="contact">
+    <h1><strong>About Us</strong></h1>
+   
+    <h2><strong>Looking for a fun way to stay active? Our sports centre offers a variety of classes and activities that will keep you coming back for more.</strong></h2>
+    <h3>Address:</h3>
+    <p class="contactdetails">Olympus Sport Centre<br>Univsersity of Leeds<br> Woodhouse<br> Leeds LS2 9JT</p>
+    <section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.0338439524294!2d-1.557221483955677!3d53.80668148007813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795c02da8a25af%3A0xd388478487e96af9!2sUniversity%20of%20Leeds!5e0!3m2!1sen!2suk!4v1678718427891!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <br>
+    <p class="contactdetails">Open 8:00 am - 10:00 pm every day</p>
+
+    <p class="ps">(Please be sure to check the timetable as operating hours vary for each activity)</p>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <h2><strong>Are you a customer who needs help? That&#39;s what our team is for.</strong></h2>
+
+    <p class="aboutus-details">If you are wondering about our activities or our website, give us a call or shoot them an email at:</p>
+
+    <p class="contactdetails">&#128241; Office: <a href="tel:01132431751">0113 243 1751</a></p>
+
+    <p class="contactdetails">📩 Ayesha Rahman: <a href="mailto:sc21ar@leeds.ac.uk">sc21ar@leeds.ac.uk</a></p>
+
+    <p class="contactdetails">📩 Geeyoon Lim: <a href="mailto:ml20g2l@leeds.ac.uk">ml20g2l@leeds.ac.uk</a></p>
+
+    <p class="contactdetails">📩 Hanmoon Hwang: <a href="mailto:sc21h2h@leeds.ac.uk">sc21h2h@leeds.ac.uk</a></p>
+
+    <p class="contactdetails">📩 Natalie Leung: <a href="mailto:sc21nl@leeds.ac.uk">sc21nl@leeds.ac.uk</a></p>
+
+    <p class="contactdetails">📩 Sandra Guran: <a href="mailto:sc21samg@leeds.ac.uk">sc21samg@leeds.ac.uk</a></p>
+
+    <p class="contactdetails"">or check out the Q&amp;A section- the answer might be there already!</p>
+
+    <p>&nbsp;</p>
+    <div class="row">
+      <div class="column">
+        <img src={{ url_for('static', filename='images/rockclimbing-aboutus.png') }} alt="Rock climbing" style="width:100%" height="100%">
+      </div>
+      <div class="column">
+        <img src={{ url_for('static', filename='images/run-aboutus.png') }} alt="Run" style="width:100%" height="100%">
+      </div>
+      <div class="column">
+        <img src={{ url_for('static', filename='images/yoga-aboutus.png') }} alt="Yoga" style="width:100%" height="100%">
+      </div>
+      <div class="column">
+        <img src={{ url_for('static', filename='images/gym-aboutus.png') }} alt="Gym" style="width:100%" height="100%">
+      </div> 
+      <div class="column">
+        <img src={{ url_for('static', filename='images/yoga2-aboutus.png') }} alt="Yoga2" style="width:100%" height="100%">
+      </div> 
+    </div>
+  
+  <footer style="background-color: rgb(54, 54, 54); color:#fff">
+    <h5>Our social media:</h5>
+    <ul style="list-style: none;">
+      <li>Instagram: <a href="https://www.instagram.com/olympussportcentre/">Instagram Handle</a></li>
+      <li>Facebook: <a href="https://www.facebook.com/people/Olympus-Sport-Centre/100090985419485/">Facebook Handle</a></li>
+      <li>Twitter: <a href="https://twitter.com/OlympusSportLds">Twitter Handle</a></li>
+      <li>Youtube: <a href="https://www.youtube.com/channel/UC89p2J9l_d0eQYuKNhS23tA">Youtube Handle</a></li>
+    </ul>
+    <br>
+  </footer>
+</body>
+{% endblock %} 
+

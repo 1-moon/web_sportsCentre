@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/activities.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fyF/J585fqnBAdDTCmAdEY9UEBIzJPAhJZj7xS" 
+    crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <h1 style="text-align:center;"><strong>Activities</strong></h1>
+
+    <h2 style="text-align:center;"><strong>Step into our sports center and embark on a journey of self-discovery, where you&#39;ll
+        <br> find the strength, motivation, and support you need to achieve your fitness goals.</strong></h2>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <!-- The first flip card (swimming) here -->
+                <div class="flip-card">
+                    <!-- Flip card container -->
+                    <div class="flip-card-inner">
+                        <!-- Front of card with image -->
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/swimming.png') }}" alt="Swimming" style="width: 250px; height: 350px;">
+                        </div>
+                        <!-- Back of card with Information -->
+                        <div class="flip-card-back">
+                            <h2>Swimming</h2>
+                            <p>There are three types of swimming activities offered in most swimming pools, which are general use, lane swimming, and swimming lessons. </p>
+                            <p>General use allows swimmers to freely swim and play in the pool, while lane swimming is for those who want to swim laps and improve their technique. 
+                                Swimming lessons are available for beginners and those looking to improve their skills.</p>
+                            <p>You can also participate in our team events!</p>
+                        </div>
+                    </div>
+                </div>
+    
+    
+
+            </div>
+
+            <div class="col">
+                <!-- The second flip card (fitness) here -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/fitness_room.jpg') }}" alt="Fitness" style="width: 250px; height: 350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h2>Fitness</h2>
+                            <p>Our fitness offers various types of exercise equipment to help people improve their fitness and health.</p>
+                            <p>Some common exercise machines include treadmills, stationary bikes, elliptical machines, rowming machines, weightlifting machines, and free weights.</p>
+                            <p>General use allows customer to freely using machines.</p>
+    
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div>
+
+            <div class="col">
+                <!-- The third flip card (squash) here -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/squash.jpg') }}" alt="Squash" style="width: 250px; height: 350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h2>Squash</h2>
+                            <p>We have 2 large courts. Squash is typically played with two people, but some cases, 
+                                double matches can also be played.</p>
+                            <p>With 2 squash courts available and 4 players per court, up to 8 people can play simultaneously.</p>
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div>
+
+            <div class="col">
+                <!-- The fourth flip card (sports hall) here-->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/sports_hall.jpg') }}" alt="Sports hall" style="width: 250px; height: 350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h2>Sports hall</h2>
+                            <p>You can play basketball, volleyball, dodgeball and other ball sports here, 
+                                as well as jump rope and whatever you want.</p>
+                            <p>We have team events on Thursday and Saturday, so check the timetable if you are interested!</p>
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col">
+                <!-- The fifth flip card (climbing) here -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/climbing.jpg') }}" alt="Climbing" style="width: 250px; height: 350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h2>Climbing</h2>
+                            <p>With state-of-the-art equipment and expert instructions, 
+                                you will learn how to climb safely and effetively while getting a full-body workout. </p>
+                            <p>We have a general class for every level!</p>
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div>
+
+            <div class="col">
+                <!-- The sixth flip card (pliates) here -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/pilates.jpg') }}" alt="Pilates" style="width: 250px; height: 350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h2>Pilates</h2>
+                            <p>Our classis equipped with professional, mordern lecture halls and a 
+                                variety of Pilates equipments, and provides personalised feedback.</p>
+                            <p>Classes are only available on Mondays from 6-7pm.</p>
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div>
+
+            <div class="col">
+                <!-- The seventh flip card (aerobics) here -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/aerobics.jpg') }}" alt="Aerobics" style="width: 250px; height: 350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h2>Aerobics</h2>
+                            <p>You can perform to music and led by an instructor with members up to 25.</p>
+                            <p>Music is always upbead and trendy.</p>
+                            <p>You can pick the time between 10-11am on Tues, 7-8pm on Thurs, and 10-11 on Sat.</p>
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div>
+
+            <div class="col">
+                <!-- The eighth flip card (yoga) here-->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/yoga.jpg') }}" alt="Yoga" style="width: 250px; height: 350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h2>Yoga</h2>
+                            <p>A yoga class combines physical postures, breathing techniques, and meditation to promote physical and mental wellness.</p>
+                            <p>It can improve flexibility, strength, balance, and reduce stress levels.</p>
+                            <p>We have two classes 7-8pm on Friday and 9-10am on Sunday.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                
+            </div>
+        </div>
+
+    </div>
+
+
+  </body>
+</html>
+  
+{% endblock %} 
+
+
+<!--swimming pool image: https://www.durhamradionews.com/archives/107185-->
+<!--Fitness room image: https://www.torbayandsouthdevon.nhs.uk/services/healthy-lifestyles/move-more/fitness-in-torbay/-->
+<!--Squash image: http://www.dorsetsquash.org.uk/2022/09/canford-real-tennis-and-squash-junior-drop-in-morning/-->
+<!--Sports hall: https://sovpsl.com/airconditioning/leisure-centre-gym-->
+<!--Climbing: https://smartclimbing.co.uk/individual-coaching/-->
+<!--Pilates: https://mhnpc.com/pain-relief/physical-therapy-pain-treatment/-->
+<!--Aerobics: https://www.impelo.org.uk/impelo-news/2019/2/8/all-that-jazz?locale=en-->
+<!--Yoga: https://rayyogastudio.ca/classes/teens-yoga-classes/-->

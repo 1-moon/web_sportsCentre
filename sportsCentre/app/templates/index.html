@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/base.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='js/base.js') }} />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<section>
+  <div class="container">
+    <div class="left">
+      <img src={{ url_for('static', filename='images/swim.png') }}   />
+    </div>
+    <div class="right">
+      <div class="content">
+        <h1><b>Check out our group exercises and classes!!</b></h1>
+        <a href="/activities" class="btn">Go to Activities></a>
+        <h1><b>Refer to a friend and get one month free!</b></h1>
+        <a href="/membership" class="btn">Check out our memberships>></a>
+      </div>
+    </div>
+  </div>
+  <div class="containerright text-center">
+    <div class="row">
+      <div class="col align-self-end"><b>
+        At Olympus Sport Centre you do not require to sign any contracts! <br>
+        Open from: --:-- to --:-- <br>
+        Allowing you access to all its facilities (excluding planned events) and have more time as desired by you! <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.0338439524294!2d-1.557221483955677!3d53.80668148007813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795c02da8a25af%3A0xd388478487e96af9!2sUniversity%20of%20Leeds!5e0!3m2!1sen!2suk!4v1678718427891!5m2!1sen!2suk" width=100% height=100% style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </b>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="left">
+      <img src={{ url_for('static', filename='images/event.png') }} />
+    </div>
+    <div class="right">
+      <div class="content">
+        <a href="\facilities" class="btn">Check out our Facilities></a>
+        <h1><b>Check out our facilities of your interest for this month and upcoming months</b></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <img src={{ url_for('static', filename='images/tennis.png') }}/>
+    </div>
+    <div class="right">
+      <div class="content">
+        <a href="/booking" class="btn">Events for Everyone></a>
+        <h1><b>Check out our multiple events conducted by our staff to help make a friendly community for Everyone</b></h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container12">
+    <div class="right_social_media">
+        <h5>Follow our social media:</h5>
+        <h6><ul style="list-style: none;">
+          <li>Instagram: <a style="text-decoration: none;" href="https://www.instagram.com/olympussportcentre/">Instagram Handle</a></li>
+          <li>Facebook: <a style="text-decoration: none;" href="https://www.facebook.com/people/Olympus-Sport-Centre/100090985419485/">Facebook Handle</a></li>
+          <li>Twitter: <a style="text-decoration: none;" href="https://twitter.com/OlympusSportLds">Twitter Handle</a></li>
+          <li>Youtube: <a style="text-decoration: none;" href="https://www.youtube.com/channel/UC89p2J9l_d0eQYuKNhS23tA">Youtube Handle</a></li>
+        </ul></h6>
+        <ul style="list-style: none;">
+          <li><a style="background-color: aquamarine; padding: 0; margin: 5px 0" href="#" class="btn">Contact></a></li>
+          <li><a style="background-color: aquamarine; padding: 0; margin: 5px 0"href="#" class="btn">Opening hours></a></li>
+          <li><a style="background-color: aquamarine; padding: 0; margin: 5px 0"href="#" class="btn">How to find us></a></li>
+          <li><a style="background-color: aquamarine; padding: 0; margin: 5px 0"href="#" class="btn">About us></a></li>
+        </ul>
+    </div>
+  </div> -->
+</section>
+
+  <div class="container1">
+    <img src={{ url_for('static', filename='images/design.png') }} style="width: 100%;"/>
+    <div class="centered">
+      <img src={{ url_for('static', filename='images/hiring.png') }} />
+      <a href=/hiring class="btn" style="text-transform: uppercase; background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        padding: 50%
+        display: inline-block;
+        letter-spacing: 5%;
+        font-size: 80%;">Check Vacancies></a></li>
+    </div>
+  </div>
+
+<footer style="background-color: rgb(54, 54, 54); color:#fff">
+  <hr>
+  <span style="border: 2px solid rgb(255, 255, 255); padding: 0 40px">Contact Info</span><br>
+  <span><strong><i>Email:</span><br></i></strong>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21ar@leeds.ac.uk">sc21ar@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21h2h@leeds.ac.uk">sc21h2h@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:ml20g2l@leeds.ac.uk">ml20g2l@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21nl@leeds.ac.uk">sc21nl@leeds.ac.uk</a></span><br>
+  <span><a style="text-decoration: none; color:#fff" href="mailto:sc21samg@leeds.ac.uk">sc21samg@leeds.ac.uk</a></span><br><br>
+  <span><b>
+    General Availability:
+    Monday to Friday 9am – 5pm
+    </b>
+  </span>
+
+  <hr>
+  <div class="container12">
+    <div class="right_social_media">
+        <h5>Follow our social media:</h5>
+        <h6><ul style="list-style: none;">
+          <li><i><strong>Instagram: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.instagram.com/olympussportcentre/">Instagram Handle</a></li>
+          <li><i><strong>Facebook: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.facebook.com/people/Olympus-Sport-Centre/100090985419485/">Facebook Handle</a></li>
+          <li><i><strong>Twitter: </strong></i><a style="text-decoration: none; color:#fff" href="https://twitter.com/OlympusSportLds">Twitter Handle</a></li>
+          <li><i><strong>Youtube: </strong></i><a style="text-decoration: none; color:#fff" href="https://www.youtube.com/channel/UC89p2J9l_d0eQYuKNhS23tA">Youtube Handle</a></li>
+        </ul></h6>
+        <ul style="list-style: none;">
+          <style>
+            /* Popup container - can be anything you want */
+            .popup {
+              position: relative;
+              display: inline-block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+            
+            /* The actual popup */
+            .popup .popuptext {
+              visibility: hidden;
+              width: 160px;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -80px;
+            }
+            
+            /* Popup arrow */
+            .popup .popuptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: rgb(255, 255, 255) transparent transparent transparent;
+            }
+            
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+              visibility: visible;
+              -webkit-animation: fadeIn 1s;
+              animation: fadeIn 1s;
+            }
+            
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+              from {opacity: 0;} 
+              to {opacity: 1;}
+            }
+            
+            @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+            }
+            </style>                        
+            <div class="popup" onclick="myFunction()">Opening Hours>
+              <span class="popuptext" id="myPopup">
+                Open: --:-- <br>
+                Closes: --:--
+              </span>
+            </div>
+            
+            <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+            }
+            </script>
+            
+
+
+          <li><a style="background-color: rgb(255, 255, 255); padding: 0; margin: 5px 0"href="/aboutUs" class="btn">About us></a></li>
+        </ul>
+    </div>
+  </div>
+  <form action="/setcookie" method="POST">
+    {% if loggedIn %}
+    <h1 style="padding: 0px; padding-left: 350px">Set cookie</h1>
+         <p style="margin-left: 625px; margin-bottom: 7px"><input style="border-radius: 8px; background-color: rgb(255, 255, 255); color:black" type='submit' value='Set Cookie'/></p>
+     <a style="text-decoration: none; color:black; margin-top: 0px;  margin-left: 613px; background-color: rgb(255, 255, 255); border-radius: 8px; padding-left: 5px; padding-right: 5px" href="/getcookie">see cookie value</a>
+    {% endif %}
+  </form>
+  <span style="text-align: right;">
+  <a style="text-decoration: none; display: block; margin-top: -23px; color:#fff" href="/privacy">Privacy Policy</a>
+  </span>
+</footer>
+
+
+
+
+
+
+{% endblock content %}
+<!-- https://www.askpython.com/python-modules/flask/flask-templates--
+  https://unsplash.com/photos/-BUPaAMSOdE>

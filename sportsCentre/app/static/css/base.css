@@ -1,0 +1,318 @@
+
+
+/* -------------------------- Mobile -------------------------- */
+
+
+
+/* --------------------------------------------- Mobile --------------------------------------------- */
+
+
+
+
+@media (max-width: 0px){
+  .dropbtn {
+    
+      border-radius: 15px;
+      color: black;
+      padding: 5px;
+      font-size: 12px;
+  }
+  .dropdown {
+      display: inline;
+  }
+  .dropdown-content {
+      position: right;
+      background-color: lightgray;
+      min-width: 200px;
+      display: none;
+      z-index: 1;
+  }
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  }
+  .dropdown-content a:hover {
+      background-color: black;
+      color: white;
+  }
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+  .dropdown:hover .dropbtn {
+      background-color: skyblue;
+  }
+
+  /* Container holding the image and the text */
+  .container1 {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    
+    /* Bottom left text */
+    .bottom-left {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+    }
+    
+    /* Top left text */
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+    
+    /* Top right text */
+    .top-right {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+    }
+    
+    /* Bottom right text */
+    .bottom-right {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+    }
+    
+    /* Centered text */
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  .rightcontainer{
+    position: absolute;
+    right: 0;
+  }
+
+  section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+
+  .containerright {
+    border: 1px solid black;
+    width: 40%;
+    max-width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+
+  .left {
+    width: 100%;
+    height: 150%;
+    /* background: url('../images/swimming.png')    
+    no-repeat center / cover; */
+    border-radius: 8px;
+  }
+
+  .right {
+    width: 50%;
+    min-height: 70%;
+    background-color: #7e9494;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    margin-left: -150px;
+  }
+  .right h1 {
+    font-size: 90%;
+    font-weight: lighter;
+  }
+  .right p {
+    margin: 10%;
+    font-size: 45%;
+  }
+  .right a {
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 20%;
+    display: inline-block;
+    letter-spacing: 5%;
+    font-size: 50%;
+  }
+}
+
+
+
+
+/* --------------------------------------------- Tablet --------------------------------------------- */
+
+
+
+
+@media (min-width: 951px){
+  .dropbtn {
+      border-radius: 15px;
+      color: black;
+      padding: 5px;
+      font-size: 12px;
+  }
+  .dropdown {
+      display: inline;
+  }
+  .dropdown-content {
+      position: right;
+      background-color: lightgray;
+      min-width: 200px;
+      display: none;
+      z-index: 1;
+  }
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  }
+  .dropdown-content a:hover {
+      background-color: black;
+      color: white;
+  }
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+  .dropdown:hover .dropbtn {
+      background-color: skyblue;
+  }
+
+  /* Container holding the image and the text */
+  .container1 {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    
+    /* Bottom left text */
+    .bottom-left {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+    }
+    
+    /* Top left text */
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+    
+    /* Top right text */
+    .top-right {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+    }
+    
+    /* Bottom right text */
+    .bottom-right {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+    }
+    
+    /* Centered text */
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  .rightcontainer{
+    position: absolute;
+    right: 0;
+  }
+
+  section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+
+  .containerright {
+    border: 1px solid black;
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+
+  .left {
+    width: 100%;
+    height: 150%;
+    /* background: url('../images/swimming.png')    
+    no-repeat center / cover; */
+    border-radius: 8px;
+  }
+
+  .right {
+    width: 50%;
+    min-height: 70%;
+    background-color: #7e9494;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    margin-left: -150px;
+  }
+  .right h1 {
+    font-size: 90%;
+    font-weight: lighter;
+  }
+  .right p {
+    margin: 10%;
+    font-size: 45%;
+  }
+  .right a {
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 7%;
+    display: inline-block;
+    letter-spacing: 5%;
+    font-size: 80%;
+  }
+}

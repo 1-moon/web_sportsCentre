@@ -1,0 +1,52 @@
+{% extends "mbase.html" %}{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/base.css') }} />
+</head>
+<div style="padding-top: 130px">
+    <h1>Searched Product</h1>
+	<p style="padding-left: 100px">You searched for : <em>{{itemSear}}</em></p>
+</div>
+
+{% if fsearchData == 'NO ITEM' %}
+<div>
+	<p style="text-align: center; color: red"><b>NO ITEM FOUND!<br>EITHER TRY TYPING THE EXACT NAME OR TYPE THE PRODUCT NAME AVAILABLE ON THE SITE ONLY!</b></p>
+</div>
+
+{% else %}
+<div>
+		<br>
+		<h2>Items<br></h2>
+	<table>
+		<tr>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{fsearchData[0][1]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{fsearchData[0][2]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{fsearchData[0][3]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{fsearchData[0][4]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{fsearchData[0][5]}}
+			</td>
+			<td style="padding-bottom: 3px; padding-top: 5px; padding-left: 35px;">
+				{{fsearchData[0][6]}}
+			</td>
+			
+		</tr>
+	</table>
+</div>
+
+{% endif %}
+
+
+</body>
+</html>
+{% endblock %} 

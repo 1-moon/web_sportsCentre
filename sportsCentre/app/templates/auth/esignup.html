@@ -1,0 +1,97 @@
+<!-- by ayesha -->
+
+<html>
+<head>
+  <title>Employee</title>
+  <style>
+    #overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: #999;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        z-index: 100;
+    }
+
+    #popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        width: 500px;
+        height: 555px;
+        margin-left: -250px; /*Half the value of width to center div*/
+        margin-top: -250px; /*Half the value of height to center div*/
+        z-index: 200;
+    }
+
+    #popupclose {
+        float: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="overlay"></div>
+<div id="popup">
+    <div class="popupcontrols">
+        <a href="/managerhome" id="popupclose">X</a>
+    </div>
+    <div class="popupcontent">
+      <h1 class="h1title">Olympus Sport Centre</h1>
+      <div class="login">
+        <form action="/esignup" method="POST" onsubmit="return validate()">
+          <form action="/register_data" method = "POST" class="form-register">
+            <p>Email: <input type="email" name="email"></p>
+  
+            <P>Password: <input type="password" name="password" id="password" required></p>
+        
+            <p>Confirm Password: <input type="password" name="cpassword" id="cpassword"></p>
+        
+            <p>First Name: <input type="text" name="firstName"></p>
+            <p>Last Name: <input type="text" name="lastName"></p>
+            <p>Address Line 1: <input type="text" name="address1"></p>
+            <p>Address Line 2: <input type="text" name="address2"></p>
+            <p>Zipcode: <input type="text" name="zipcode"></p>
+            <p>City: <input type="text" name="city"></p>
+            <p>State: <input type="text" name="state"></p>
+            <p>Country: <input type="text" name="country"></p>
+            <p>Phone Number: <input type="text" name="phone"></p>
+            <label for="position">Choose a position:</label>
+            <select type="text" name="position" id="position">
+              <option  value="receptionist">Receptionist</option>
+              <option  value="instrustor">Instrustor</option>
+              <option  value="cleaner">Cleaner</option>
+              <option  value="life-guard">Life guard</option>
+            </select>
+            <br>
+            <button href="/managerhome" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Add Staff Member</button>
+            <br />
+        </form>
+        </form>
+        
+      </div>
+    </div>
+</div>
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+<script type="text/javascript">
+    // Initialize Variables
+    var closePopup = document.getElementById("popupclose");
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+ 
+    // Close Popup Event
+    closePopup.onclick = function() {
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+    };
+</script>
+</body>
+</html>
+

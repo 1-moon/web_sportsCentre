@@ -1,0 +1,31 @@
+{% extends "base.html" %}{% block content %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/equipment.css') }} />
+<div class="row">
+    <div class="column">
+        <img src={{ url_for('static', filename='images/eq1.png') }}  width=100% height="400"/>
+        <img src={{ url_for('static', filename='images/eq3.png') }}  width=100% height="400"/>
+        <img src={{ url_for('static', filename='images/eq5.png') }}  width=100% height="400"/>
+    </div>
+    <div class="column">
+        <br>
+        <h1 style="text-align: center;"><strong>BEST QUALITY EQUIPMENT!!</strong></h1>
+        <br>
+        <h3 style="text-align: center;"><strong>Our Cardio Equipment:</strong></h3>
+        <p style="text-align: center;">Treadmills<br> cross trainers<br> stair climbers<br> steppers<br> exercise bikes <br> rowing machines and much more!</p>
+        <h3 style="text-align: center;"><strong>Our weights equipment:&nbsp;</strong></h3>
+        <p style="text-align: center;">Dumbbells up to 50kg <br> weights benches <br> squat racks <br> to plate-loaded equipment and much more!</p>
+        <h3 style="text-align: center;"><strong>Fixed Resistence Weight:&nbsp;</strong></h3>
+        <p style="text-align: center;"><strong>Upper body: </strong> <br>chest press <br> shoulder press<br> bicep curls <br> lateral pull down machines and much more!</p>
+        <p style="text-align: center;"><strong>Your entire body: </strong><br> leg presses<br> ab machines<br> multi-gym stations <br> hip abductors and much more!</p>
+        <h3 style="text-align: center;"><strong>Changing rooms:</strong></h3>
+        <p style="text-align: center;">Individual showers<br> locker facilities<br> hairdryers in all clubs <br> spare plug sockets for your own appliances.</p>
+        <h3 style="text-align: center;"><strong>Other Equipments:</strong></h3>
+        <p style="text-align: center;">Vending machines<br> Additional Lockers<br> Cafe</p>
+    </div>
+    <div class="column">
+        <img src={{ url_for('static', filename='images/eq2.png') }}  width=100% height="400" />
+        <img src={{ url_for('static', filename='images/eq4.png') }}  width=100% height="400" />
+        <img src={{ url_for('static', filename='images/eq6.png') }}  width=100% height="400" />
+    </div>
+  </div>
+{% endblock %}

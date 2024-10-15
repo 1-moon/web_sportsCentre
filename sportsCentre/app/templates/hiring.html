@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<head>
+	<title>Olympus Sports Centre</title>
+	<link rel="stylesheet" href={{ url_for('static', filename='css/hiring.css') }} />
+</head>
+<body>
+	<div class="page-wrap">
+		<!--Page content starts here-->
+		<h1 style="text-align:center"><strong>CAREERS SEARCH</strong></h1>
+		<h2 style="text-align:center">Head over to the careers board to see all current vacancies.</h2>
+			<div class="image-container">
+				<!--Image 1 (fitness team)-->
+				<div class="image-wrapper">
+				<img src="{{ url_for('static', filename='images/fitness_team.png') }}" alt="fitness team">
+				<div class="caption">
+					<h2><strong>FITNESS TEAM</strong></h2>
+					<div class="textbox">
+					<p>At Olympus Sports Centre, our Fitness Coaches and Gym Instructors are crucial in ensuring our members receive the ultimate fitness experience. If you are interested in part-time employment, we offer a secure and beneficial opportunity to join the team at the UK's favourite gym. Additionally, we provide development programmes to aid your career progression, should your goal be to become part of our gym management team. For Personal Trainers (PTs), Olympus Sports Centre offers excellent facilities to assist members in achieving their fitness goals, allowing PTs to grow their businesses. We take pride in our exceptional training and support for PTs at Olympus Sports Centre.</p>
+					</div>
+				</div>
+				</div>
+
+				<!--Image 2 (gym management team)-->
+				<div class="image-wrapper">
+				<img src="{{ url_for('static', filename='images/gym_management.png') }}" alt="gym management">
+				<div class="caption">
+					<h2><strong>GYM MANAMEMENT</strong></h2>
+					<div class="textbox">
+					<p>If you are interested in a role as a Gym Manager or Assistant Gym Manager, you will be responsible for ensuring that members of the Olympus Sports Centre receive an exceptional experience. You will need to provide strong leadership to your Fitness Team, enabling them to perform their duties to the best of their ability. Your leadership team will provide you with the necessary support to accomplish this and opportunities to develop and advance your career within Olympus Sports Centre. Additionally, you will be free to incorporate your personality and energy into your gym, allowing you to be creative and expressive. If you want to work with a dedicated team, learn new skills, advance your career, and make a difference, look no further than Olympus Sports Centre.</p>
+					</div>
+				</div>
+				</div>
+
+				<!--Image 3 (central support team)-->
+				<div class="image-wrapper">
+				<img src="{{ url_for('static', filename='images/central_support.png') }}" alt="central support">
+				<div class="caption">
+					<h2><strong>CENTRAL SUPPORT</strong></h2>
+					<div class="textbox">
+					<p>We are the largest gym operator in the UK with a mission to inspire a healthier nation, and with ambitious plans for growth, we need the right people to help us achieve our goals. As an international Group and a leading European operator, our size provides ample opportunities for growth and acceleration of your career. While our offices are located in Leeds, we offer flexibility for most support roles, allowing collaboration in person or remotely. Our support teams are at the heart of our gyms and provide tools, thought leadership, and expertise across all disciplines in functional specialist areas.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+</body>
+
+
+{% endblock%}
+
+
+<!--https://www.puregym.com/careers/-->
+<!--https://www.rntfitness.co.uk/-->
+<!--https://www.dreamstime.com/photos-images/gym-manager.html-->
+<!--https://online.maryville.edu/online-bachelors-degrees/exercise-science/careers/fitness-manager-job-description/-->
+<!--job descriptions: https://www.puregym.com/careers/https://www.puregym.com/careers/-->

@@ -1,0 +1,46 @@
+p.contactdetails{
+    text-align: center;
+    font-size: 125%;
+}
+p.aboutus-details{
+    text-align: center;
+    font-size: 135%;
+}
+p.ps{
+    font-size: 75%;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    font-size: 200%
+}
+h2{
+    text-align: center;
+    font-size: 180%
+}
+h3{
+    text-align: center;
+}
+section{
+    align-items:center;
+}
+.row {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 20%;
+    padding: 0px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  a{
+    text-decoration: none;
+    color: rgb(16, 0, 241);
+  }

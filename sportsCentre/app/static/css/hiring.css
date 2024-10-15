@@ -1,0 +1,50 @@
+body {
+    background-color: #fff;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 50px;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .image-wrapper {
+    width: 30%;
+    margin: auto;
+  }
+  
+  
+  .caption {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  
+  .textbox {
+    padding: 10px;
+    height: 150px;
+  }
+ img{
+  margin-left: auto;
+  margin-right: auto;
+ }
+ p{
+  text-align: center;
+ }
+ .page-wrap{
+  width: 60%;
+  margin: auto;
+  display: inline;
+ }

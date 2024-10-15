@@ -1,0 +1,31 @@
+
+{% extends "mbase.html" %}
+{% block content %}
+<form action="/massignjob" method="POST">
+    <label for="user">User:</label>
+    <select id="user" name="user">
+    {% for user in users %}
+    <option value="{{ user.userId }}">{{ user.firstName }} {{ user.lastName }}</option>
+    {% endfor %}
+    </select>
+    <br>
+    <label for="facility">Facility:</label>
+    <select id="facility" name="facility">
+    {% for fac in facilities %}
+    <option value="{{ fac.facilityId }}">{{ fac.name }}</option>
+    {% endfor %}
+    </select>
+    <br>
+    <label for="start_time">Start Time:</label>
+    <input type="datetime-local" id="start_time" name="start_time">
+    <br>
+    <label for="end_time">End Time:</label>
+    <input type="datetime-local" id="end_time" name="end_time">
+    <br>
+    <button type="submit">Assign Job</button>
+</form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "ebase.html" %}{% block content %}
+<html>
+<head>
+<title>Employee Payslip</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/epayslip.css') }} />
+</head>
+<body>
+    <form action="/monthinput">
+    <p class="month"><input type="month" id="start" name="start"></p>
+    <p class="month"><input type="submit" value="Submit"></p>
+    </form>
+            <p class="salary">Pay date:</p>
+            <br>
+            <p class="salary">Tax period:</p>
+            <p>&nbsp;</p>
+            <p class="salary">Payment cover:</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p class="salary">What you take home:</p>
+            <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+    <table style=" margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;">
+        <tr>
+            <th colspan="2">Payment</th>
+            <th>Hours</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td colspan="2">(basic pay)</td>
+            <td>(hours worked)</td>
+            <td>(amount)</td>
+        </tr>
+        <tr>
+            <td colspan="3"><b>Deduction (tax)</b></th>
+            <td>(amount)</td>
+        </tr>
+        <tr>
+            <td colspan="3"><b>Total</b></th>
+            <td>(total amount)</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+{% endblock %} 

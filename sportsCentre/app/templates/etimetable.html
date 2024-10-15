@@ -1,0 +1,55 @@
+{% extends "ebase.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/booking.css') }} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="../static/js/booking.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <p class="current-date"></p>
+        <div class="icons">
+          <span id="prev" class="material-symbols-rounded">chevron_left</span>
+          <span id="next" class="material-symbols-rounded">chevron_right</span>
+        </div>
+      </header>
+      <div class="calendar">
+        <ul class="weeks">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+        <ul class="days">
+          {% for day in days %}
+            <li {% if day.month != currentMonth %}class="other-month"{% endif %}>
+              <div class="date">{{ day.day }}</div>
+              {% for work in day_works[day.date] %}
+                <div class="work-details">
+                  <p><strong>{{ work.start_time }} - {{ work.end_time }}</strong></p>
+                  <p><strong>Position:</strong> {{ work.position }}</p>
+                  <p><strong>Facility:</strong> {{ work.facility }}</p>
+                </div>
+              {% endfor %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+<!--ref: https://www.codingnepalweb.com/dynamic-calendar-html-css-javascript/-->
+
+{% endblock %}

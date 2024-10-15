@@ -1,0 +1,79 @@
+
+
+<!-- by ayesha -->
+
+<html>
+<head>
+  <title>Employee</title>
+  <style>
+    #overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: #999;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        z-index: 100;
+    }
+
+    #popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        width: 500px;
+        height: 400px;
+        margin-left: -250px; /*Half the value of width to center div*/
+        margin-top: -250px; /*Half the value of height to center div*/
+        z-index: 200;
+    }
+
+    #popupclose {
+        float: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="overlay"></div>
+<div id="popup">
+    <div class="popupcontrols">
+        <a href="/managerhome" id="popupclose">X</a>
+    </div>
+    <div class="popupcontent">
+      <h1 class="h1title">Olympus Sport Centre</h1>
+      <div class="login">
+        <form action="/mupdatefacilities" method="POST">
+            <p >Facility Id:<input type="number" name="facilityId" value={{profileData[0]}} readonly="readonly"></p>
+            <p >Name:<input type="text" name="name" value={{profileData[1]}}></p>
+            <p >Room Counter: <input type="number" name="roomCounter" value={{profileData[2]}}></p>
+            <p >Description: <input type="text" name="description" value={{profileData[3]}}></p>
+            <p >Capacity: <input type="number" name="capacity" value={{profileData[4]}}></p>
+            <p >Open Time: <input type="time" name="openTime" value={{profileData[5]}}></p>
+            <p >Close Time: <input type="time" name="closeTime" value={{profileData[6]}}></p>
+        
+            <button href="/managerhome" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Edit Facility</button>
+            <br />
+        </form>
+
+        
+      </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // Initialize Variables
+    var closePopup = document.getElementById("popupclose");
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+ 
+    // Close Popup Event
+    closePopup.onclick = function() {
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+    };
+</script>
+</body>
+</html>

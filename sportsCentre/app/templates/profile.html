@@ -1,0 +1,152 @@
+
+
+{% extends "base.html" %}{% block content %}
+<html>
+<head>
+<title>Profile Home</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/profileHome.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css') }} />
+</head>
+<body  style="background-image: url({{ url_for('static', filename='images/bg.png') }}); background-repeat: no-repeat; background-position: center; background-size: cover; height: 100%">
+<!-- 
+<div class="display" style="padding-top: 120px">
+	<a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); padding-right: 0px; padding-left: 10px; border-radius: 5px; margin: 100px; line-height: 30px" href="/account/profile/edit">Edit Profile</a><br>
+	<a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); padding-right: 10px; padding-left: 10px; border-radius: 5px; margin: 100px; line-height: 30px" href="/account/profile/changePassword">Change Password</a><br>
+	<a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); padding-right: 10px; padding-left: 10px; border-radius: 5px; margin: 100px; line-height: 30px" href="/qna">Q/A</a><br>
+  <a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); padding-right: 10px; padding-left: 10px; border-radius: 5px; margin: 100px; line-height: 30px" href="/contact">Contact Us</a><br>
+	<a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); padding-right: 10px; padding-left: 10px; border-radius: 5px; margin: 100px; line-height: 30px" href="/getcookie">Manage cookies</a><br>
+	
+	{% if status == 1 %}
+		<button  class="btn btn-dark" style=" padding-right: 10px; padding-left: 10px; border-radius: 5px; margin: 100px; line-height: 30px">MemberType: {{ membership }}</button><br>
+
+	{% else %}
+		<a style=" margin: 100px; line-height: 30px">My membership: Inactive</a>
+	{% endif %}
+	<br><br><br>
+  <a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); padding-right: 10px; padding-left: 10px; border-radius: 5px; margin: 100px; line-height: 30px" href="/">Go to Home</a>
+</div> -->
+
+<center>
+	<div class="display" style="padding-top: 120px">
+	<div class="row justify-content-center">
+		<div class="card w-25" title="Click to see code" 
+		style=" background-color: rgb(98, 92, 92);">
+			<div class="card-body">
+				<a class="card-block stretched-link text-decoration-none" 
+				href="/account/profile/edit">
+					<br>
+					<h2 class="card-title text-white ">Edit Profile</h2>
+					<br>
+				</a>
+			</div>
+		</div>
+
+		<div class="card w-25" title="Click to see code" 
+		style=" background-color: rgb(98, 92, 92);">
+				<div class="card-body">
+					<a class="card-block stretched-link text-decoration-none"
+					 href="/account/profile/changePassword">
+						<br>
+						<h2 class="card-title text-white" >Change Password</h2>
+						<br>
+					</a>
+				</div>
+			</div>
+		
+		<!-- Force next columns to break to new line -->
+		<div class="w-100"></div>
+
+		<div class="card w-25" title="Click to see code" 
+		style=" background-color: rgb(98, 92, 92);">
+			<div class="card-body">
+				<a class="card-block stretched-link text-decoration-none"
+				href="/qna">
+					<br>
+					<h2 class="card-title text-white">Q/A</h2>
+					<br>
+				</a>
+			</div>
+		</div>
+
+		<div class="card w-25" title="Click to see code" 
+		style="background-color: rgb(98, 92, 92);">
+			<div class="card-body">
+				<a class="card-block stretched-link text-decoration-none"
+				href="/contact">
+					<br>
+					<h2 class="card-title text-white">Contact Us</h2>
+					<br>
+				</a>
+			</div>
+		</div>
+
+
+		<!-- Force next columns to break to new line -->
+		<div class="w-100"></div>
+
+		<div class="card w-25" title="Click to see code" 
+		style=" background-color: rgb(98, 92, 92);">
+			<div class="card-body">
+				<a class="card-block stretched-link text-decoration-none"
+				href="/getcookie">
+					<br>
+					<h2 class="card-title text-white">Manage cookies</h2>
+					<br>
+				</a>
+			</div>
+		</div>
+
+		{% if status == 1 %}
+		<div class="card w-25" title="Click to see code" 
+		style=" background-color: rgb(98, 92, 92);">
+			<div class="card-body">
+					<br>
+					<h4 class="card-title text-white" >MemberType: {{ membership }}</h4>
+						<form action="{{ url_for('main.cancelMembership', userId=userId) }}" 
+						method="POST"> 
+						<button class="btn btn-dark" aria-pressed="true">cancel</button>
+					</form>
+				</a>
+			</div>
+		</div>
+
+		{% else %}
+		<div class="card w-25" title="Click to see code" 
+		style=" background-color: rgb(98, 92, 92);">
+			<div class="card-body">
+				<h5 class="card-title text-white">MemberType: None</h5>
+				<p class="card-text text-white">Please buy one</p>
+				<a href="/membership" class="btn btn-dark">Buy</a>
+			</div>
+		</div>
+		{% endif %}
+
+	</div>
+	<br><br><br>
+	<a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); padding-right: 10px; padding-left: 10px; border-radius: 20px; margin: 100px; line-height: 30px" href="/">Go to Home</a>
+</div>
+</center>
+
+<style>
+
+	.card:hover {
+			cursor:	help;
+
+	}
+
+	.card:hover .card-title {
+			text-decoration: underline;
+	}
+</style>
+
+</body>
+</html>
+
+{% endblock %} 
+
+
+
+
+
+
+
