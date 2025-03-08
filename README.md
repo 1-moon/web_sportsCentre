@@ -26,8 +26,6 @@ $ pip install flask-babel
 $ pip install flask-cors
 $ pip install coverage
 $ pip install requests
-$ pip install sqlite
-$ pip install qrcode
 ```
 2. Database
 A database is already filled in with the standard facilities and activities, so there is no need to create a new one.
